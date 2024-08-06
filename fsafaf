@@ -1,0 +1,247 @@
+-- Create a ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "ExampleGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create a Square Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0.4, 0, 0.4, 0) -- Square shape (40% of screen width and height)
+frame.Position = UDim2.new(0.3, 0, 0.3, 0) -- Centered on the screen
+frame.BackgroundColor3 = Color3.new(0, 0, 0) -- Black background
+frame.Parent = screenGui
+
+-- Add UICorner to Frame
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+frameCorner.Parent = frame
+
+-- Add UIStroke to Frame
+local frameStroke = Instance.new("UIStroke")
+frameStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+frameStroke.Thickness = 1 -- Thickness of 1 pixel
+frameStroke.Parent = frame
+
+-- Create a Title Label at the top of the Frame
+local titleLabel = Instance.new("TextLabel")
+titleLabel.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+titleLabel.Position = UDim2.new(0, 0, 0, 0) -- Top of the frame
+titleLabel.Text = "Electric Own Script"
+titleLabel.TextColor3 = Color3.new(1, 1, 1) -- White text
+titleLabel.BackgroundTransparency = 1 -- No background
+titleLabel.Font = Enum.Font.FredokaOne -- Fredoka One font
+titleLabel.TextSize = 24
+titleLabel.Parent = frame
+
+-- Create an Exit Button at the top right of the Frame
+local exitButton = Instance.new("TextButton")
+exitButton.Size = UDim2.new(0.2, 0, 0.1, 0) -- Adjusted size
+exitButton.Position = UDim2.new(0.8, 0, 0, 0) -- Top right of the frame
+exitButton.Text = "Exit"
+exitButton.TextColor3 = Color3.new(1, 1, 1) -- White text
+exitButton.BackgroundColor3 = Color3.new(1, 0, 0) -- Red background
+exitButton.Parent = frame
+
+-- Add UICorner to Exit Button
+local exitButtonCorner = Instance.new("UICorner")
+exitButtonCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+exitButtonCorner.Parent = exitButton
+
+-- Add UIStroke to Exit Button
+local exitButtonStroke = Instance.new("UIStroke")
+exitButtonStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+exitButtonStroke.Thickness = 1 -- Thickness of 1 pixel
+exitButtonStroke.Parent = exitButton
+
+-- Create a TextBox for username input
+local usernameTextBox = Instance.new("TextBox")
+usernameTextBox.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+usernameTextBox.Position = UDim2.new(0, 0, 0.6, 0) -- Above the Teleport Button
+usernameTextBox.PlaceholderText = "Enter username"
+usernameTextBox.TextColor3 = Color3.new(0, 0, 0) -- Black text
+usernameTextBox.BackgroundColor3 = Color3.new(1, 1, 1) -- White background
+usernameTextBox.Parent = frame
+
+-- Add UICorner to TextBox
+local usernameTextBoxCorner = Instance.new("UICorner")
+usernameTextBoxCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+usernameTextBoxCorner.Parent = usernameTextBox
+
+-- Add UIStroke to TextBox
+local usernameTextBoxStroke = Instance.new("UIStroke")
+usernameTextBoxStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+usernameTextBoxStroke.Thickness = 1 -- Thickness of 1 pixel
+usernameTextBoxStroke.Parent = usernameTextBox
+
+-- Create a TextBox for speed input
+local speedTextBox = Instance.new("TextBox")
+speedTextBox.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+speedTextBox.Position = UDim2.new(0, 0, 0.5, 0) -- Above the username TextBox
+speedTextBox.PlaceholderText = "Enter speed"
+speedTextBox.TextColor3 = Color3.new(0, 0, 0) -- Black text
+speedTextBox.BackgroundColor3 = Color3.new(1, 1, 1) -- White background
+speedTextBox.Parent = frame
+
+-- Add UICorner to TextBox
+local speedTextBoxCorner = Instance.new("UICorner")
+speedTextBoxCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+speedTextBoxCorner.Parent = speedTextBox
+
+-- Add UIStroke to TextBox
+local speedTextBoxStroke = Instance.new("UIStroke")
+speedTextBoxStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+speedTextBoxStroke.Thickness = 1 -- Thickness of 1 pixel
+speedTextBoxStroke.Parent = speedTextBox
+
+-- Create a TextBox for jump power input
+local jumpPowerTextBox = Instance.new("TextBox")
+jumpPowerTextBox.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+jumpPowerTextBox.Position = UDim2.new(0, 0, 0.4, 0) -- Above the speed TextBox
+jumpPowerTextBox.PlaceholderText = "Enter jump power"
+jumpPowerTextBox.TextColor3 = Color3.new(0, 0, 0) -- Black text
+jumpPowerTextBox.BackgroundColor3 = Color3.new(1, 1, 1) -- White background
+jumpPowerTextBox.Parent = frame
+
+-- Add UICorner to TextBox
+local jumpPowerTextBoxCorner = Instance.new("UICorner")
+jumpPowerTextBoxCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+jumpPowerTextBoxCorner.Parent = jumpPowerTextBox
+
+-- Add UIStroke to TextBox
+local jumpPowerTextBoxStroke = Instance.new("UIStroke")
+jumpPowerTextBoxStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+jumpPowerTextBoxStroke.Thickness = 1 -- Thickness of 1 pixel
+jumpPowerTextBoxStroke.Parent = jumpPowerTextBox
+
+-- Create a TextButton for ESP
+local espButton = Instance.new("TextButton")
+espButton.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+espButton.Position = UDim2.new(0, 0, 0.8, 0) -- Above the Exit Button
+espButton.Text = "ESP"
+espButton.TextColor3 = Color3.new(1, 1, 1) -- White text
+espButton.BackgroundColor3 = Color3.new(0, 1, 0) -- Green background
+espButton.Parent = frame
+
+-- Add UICorner to ESP Button
+local espButtonCorner = Instance.new("UICorner")
+espButtonCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+espButtonCorner.Parent = espButton
+
+-- Add UIStroke to ESP Button
+local espButtonStroke = Instance.new("UIStroke")
+espButtonStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+espButtonStroke.Thickness = 1 -- Thickness of 1 pixel
+espButtonStroke.Parent = espButton
+
+-- Function to update speed
+local function updateSpeed()
+    local speed = tonumber(speedTextBox.Text) or 16 -- Default speed if input is invalid
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        humanoid.WalkSpeed = speed
+    else
+        print("Humanoid not found.")
+    end
+end
+
+-- Function to update jump power
+local function updateJumpPower()
+    local jumpPower = tonumber(jumpPowerTextBox.Text) or 50 -- Default jump power if input is invalid
+    local character = game.Players.LocalPlayer.Character
+    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+
+    if humanoid then
+        humanoid.JumpPower = jumpPower
+    else
+        print("Humanoid not found.")
+    end
+end
+
+-- Connect TextBox changes to update functions
+speedTextBox.FocusLost:Connect(updateSpeed)
+jumpPowerTextBox.FocusLost:Connect(updateJumpPower)
+
+-- Function to handle ESP
+local function toggleESP()
+    local players = game.Players:GetPlayers()
+    local espEnabled = false
+    
+    -- Toggle ESP
+    espButton.MouseButton1Click:Connect(function()
+        espEnabled = not espEnabled
+        
+        for _, player in pairs(players) do
+            if player.Character then
+                local highlight = player.Character:FindFirstChild("Highlight")
+                if espEnabled then
+                    if not highlight then
+                        highlight = Instance.new("Highlight")
+                        highlight.Name = "Highlight"
+                        highlight.Adornee = player.Character
+                        highlight.FillColor = Color3.new(0, 0, 1) -- Blue highlight color
+                        highlight.Parent = player.Character
+                    end
+                else
+                    if highlight then
+                        highlight:Destroy()
+                    end
+                end
+            end
+        end
+    end)
+end
+
+toggleESP()
+
+-- Function to handle Exit Button
+exitButton.MouseButton1Click:Connect(function()
+    screenGui:Destroy()
+end)
+
+-- Function to handle Teleport Button
+local function teleportToPlayer()
+    local username = usernameTextBox.Text
+    local playerToTeleportTo = nil
+    
+    for _, player in pairs(game.Players:GetPlayers()) do
+        if player.Name:lower() == username:lower() then
+            playerToTeleportTo = player
+            break
+        end
+    end
+    
+    if playerToTeleportTo then
+        local character = game.Players.LocalPlayer.Character
+        if character and playerToTeleportTo.Character then
+            character:MoveTo(playerToTeleportTo.Character.PrimaryPart.Position)
+        else
+            print("Character or target player not found.")
+        end
+    else
+        print("Player not found.")
+    end
+end
+
+-- Create a Teleport Button
+local teleportButton = Instance.new("TextButton")
+teleportButton.Size = UDim2.new(1, 0, 0.1, 0) -- 10% height of the frame
+teleportButton.Position = UDim2.new(0, 0, 0.7, 0) -- Above the ESP Button
+teleportButton.Text = "Teleport"
+teleportButton.TextColor3 = Color3.new(1, 1, 1) -- White text
+teleportButton.BackgroundColor3 = Color3.new(0, 0, 1) -- Blue background
+teleportButton.Parent = frame
+
+-- Add UICorner to Teleport Button
+local teleportButtonCorner = Instance.new("UICorner")
+teleportButtonCorner.CornerRadius = UDim.new(0, 10) -- Radius of 10 pixels
+teleportButtonCorner.Parent = teleportButton
+
+-- Add UIStroke to Teleport Button
+local teleportButtonStroke = Instance.new("UIStroke")
+teleportButtonStroke.Color = Color3.new(0, 0, 0) -- Black stroke
+teleportButtonStroke.Thickness = 1 -- Thickness of 1 pixel
+teleportButtonStroke.Parent = teleportButton
+
+-- Connect Teleport Button to function
+teleportButton.MouseButton1Click:Connect(teleportToPlayer)
